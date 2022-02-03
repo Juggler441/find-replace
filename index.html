@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+input {
+  border-radius: 3px;
+  background-color: #f2f2f2;
+  padding: 3px;
+}
+textarea {
+  border-radius: 3px;
+  background-color: #f2f2f2;
+  padding: 3px;
+}
+form {
+  border-radius: 3px;
+  background-color: #E2E3E9;
+  padding: 10px;
+}
+</style>
+
+<body>
+<form onsubmit="return myFunction()">
+  <textarea id="input" rows="20" cols="100" autofocus></textarea><br>
+  find: <input type="text" id="find" size="70" placeholder="'*' or /*/g (for regex)"><br>
+  replace: <input type="text" id="replace" size="70" placeholder="'*'"><br><br>
+  <textarea id="result" rows="20" cols="100" autofocus></textarea><br>
+  <input type="submit" value="Submit"><br>
+</div>
+
+<script>
+function myFunction() {
+  var input = document.getElementById("input").value;
+  var find = eval(document.getElementById("find").value);
+  var replace = eval(document.getElementById("replace").value);
+  var result = input.replace(find, replace);
+  document.getElementById("result").innerHTML = result;
+  document.getElementById("input").select();
+  document.getElementById("result").select();
+  return false;
+}
+</script>
+
+</body>
+</html>
